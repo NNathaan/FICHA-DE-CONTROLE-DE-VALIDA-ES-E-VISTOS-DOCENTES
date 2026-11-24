@@ -1,0 +1,152 @@
+TECHFLOW — RELATÓRIO DE DESENVOLVIMENTO
+ETAPA 06 — CRUD EM MEMÓRIA
+
+Projeto: TECHFLOW
+Etapa: 06
+Tema: Implementação de CRUD em memória
+Linguagem: Python
+Ambiente de desenvolvimento: Visual Studio Code
+Armazenamento: Lista de dicionários em memória
+
+1. OBJETIVO DA ETAPA
+
+Implementar as quatro operações fundamentais de um CRUD (Create, Read, Update e Delete), permitindo cadastrar, consultar, alterar e excluir chamados utilizando estruturas de dados em memória.
+
+2. ESTRUTURA DOS DADOS
+
+Cada chamado possui sete campos:
+
+id: identificador único.
+titulo: título do chamado.
+solicitante: responsável pela solicitação.
+prioridade: prioridade do chamado.
+cep: código postal.
+cidade: cidade relacionada ao chamado.
+status: situação atual do chamado.
+
+Exemplo de registro:
+
+python
+{
+    "id": 1,
+    "titulo": "Servidor caiu",
+    "solicitante": "João Silva",
+    "prioridade": "alta",
+    "cep": "55150-000",
+    "cidade": "Belo Jardim",
+    "status": "aberto"
+}
+
+3. FUNCIONALIDADES IMPLEMENTADAS
+3.1 CREATE — Cadastrar
+
+Função: cadastrar_chamado()
+
+Responsabilidades:
+
+Solicitar os dados do chamado.
+Validar a prioridade.
+Gerar identificador automaticamente.
+Adicionar o registro à lista.
+Atualizar o contador proximo_id.
+3.2 READ — Listar
+
+Função: listar_chamados()
+
+Responsabilidades:
+
+Percorrer a lista de chamados.
+Exibir os dados cadastrados.
+Tratar situações em que a lista esteja vazia.
+Apresentar os campos de cada registro.
+3.3 UPDATE — Alterar
+
+Função: alterar_chamado()
+
+Responsabilidades:
+
+Localizar o chamado pelo identificador.
+Alterar o campo solicitado.
+Confirmar a atualização.
+Informar quando o ID não for encontrado.
+3.4 DELETE — Excluir
+
+Função: excluir_chamado()
+
+Responsabilidades:
+
+Localizar o chamado pelo identificador.
+Remover o registro da lista.
+Confirmar a exclusão.
+Tratar identificadores inexistentes.
+4. CONTROLE DE IDENTIFICADORES
+
+O projeto utiliza a variável proximo_id para garantir a geração sequencial dos identificadores.
+
+A cada cadastro, o contador é incrementado.
+
+Uma exclusão não provoca a redução do contador.
+
+Exemplo:
+
+Primeiro cadastro: ID 1.
+Segundo cadastro: ID 2.
+Exclusão do ID 1.
+Próximo cadastro: ID 3.
+
+Dessa maneira, os identificadores não são reutilizados durante a execução do programa.
+
+5. PLANO DE TESTES
+
+O teste integrado contempla:
+
+Operação	Resultado esperado
+Create	Chamado cadastrado
+Read	Chamado exibido
+Update	Status alterado para fechado
+Read	Alteração confirmada
+Delete	Chamado removido
+Read	Lista final vazia
+6. CONCEITOS TÉCNICOS APLICADOS
+
+Durante esta etapa foram trabalhados:
+
+Funções em Python.
+Parâmetros e retornos.
+Listas.
+Dicionários.
+Estruturas condicionais.
+Laços de repetição.
+Manipulação de registros.
+Busca por identificadores.
+Validação de dados.
+Organização de código em snake_case.
+7. CONCLUSÃO
+
+A Etapa 06 desenvolve a estrutura fundamental de gerenciamento de chamados por meio das operações CRUD.
+
+A implementação permite compreender como os registros podem ser criados, consultados, atualizados e removidos sem a utilização de um banco de dados externo.
+
+O controle de identificadores também estabelece uma regra importante para manter a unicidade dos registros durante a execução.
+
+8. REGISTRO DE VALIDAÇÃO
+
+Projeto: TECHFLOW
+Etapa: 06 — CRUD em memória
+
+Checklist:
+
+Função de cadastro.
+Função de listagem.
+Função de alteração.
+Função de exclusão.
+Controle de identificadores.
+Evidência real da execução no terminal.
+Homologação final.
+
+Código de validação previsto: [TECHFLOW-ETAPA06-OK]
+
+Observação: a homologação final depende da apresentação da saída real do terminal e da conferência dos testes integrados.
+
+TECHFLOW — Desenvolvimento Python
+Registro técnico da Etapa 06
